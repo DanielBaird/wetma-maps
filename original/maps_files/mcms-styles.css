@@ -1,0 +1,113 @@
+@charset "utf-8";
+/* CSS Document */
+.msg {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:1.2em;
+	font-weight:bold;
+	margin-bottom:20px;
+	line-height:18px;
+}
+.error, .msgerror {
+	padding-left:25px;
+	padding-top:3px;
+	background:url(images/icon-cross.gif) no-repeat 0 0;
+	color:#C00;
+	/*height:20px;*/
+}
+.stop {
+	padding-left:30px;
+	padding-top:3px;
+	background:url(images/icon-stop.gif) no-repeat 0 0;
+	color:#C00;
+}
+.success {
+	padding-left:30px;
+	padding-top:10px;
+	background:url(images/icon-check.gif) no-repeat 0 0;
+	color:green;
+	padding-bottom: 30px;
+}
+.forbidden {
+	padding-left:30px;
+	padding-top:3px;
+	background:url(images/icon-forbidden.gif) no-repeat 0 0;
+	color:#C00;
+}
+.information {
+	padding-left:30px;
+	padding-top:3px;
+	background:url(images/icon-information.gif) no-repeat 0 0;
+}
+.hazard {
+	padding-left:30px;
+	padding-top:3px;
+	background:url(images/icon-hazard.gif) no-repeat 0 0;
+}
+.icon-pdf {
+	background:url(images/icon-pdf.gif) no-repeat 0 0;
+	padding-left:30px;
+	line-height:27px;
+	display: block;
+}
+.icon-word {
+	background:url(images/icon-word.gif) no-repeat 0 0;
+	padding-left:30px;
+	line-height:27px;
+	display: block;
+}
+.dottedvertline {
+	background:url(images/dotted-line-vert-bg.gif) repeat-y 9px 0px;
+	position:relative;
+	width:50px;
+	height:259px;
+	display:inline;
+	float:left;
+	margin-bottom:20px;
+}
+
+.dottedhorzline {
+	background:url(images/dotted-line-horz-bg.gif) repeat-x 0px 22px;
+	position:relative;
+	width:100%;
+	height:40px;
+	display:block;
+}
+
+.table-admin-type1, .module_detail {
+	width:100%;
+	font-size: 12px;
+}
+.table-admin-type1 th, .table-admin-type1 td, .module_detail th, .module_detail td {
+	padding-right: 10px;
+	vertical-align: top;
+}
+.table-admin-type1 input[type="text"], .table-admin-type1 input[type="password"] {
+	margin-right: 10px;
+	width: 250px;
+}
+.table-admin-type1 th {
+	width:150px;
+	text-align:left;
+	padding-top: 8px;
+}
+.table-admin-type1 textarea {
+	margin-right: 10px;
+	width: 254px;
+	height: 100px;
+}
+
+
+.table-admin-type1 th.sectionheading, .module_detail th.sectionheading {
+
+	font-weight:bold;
+	height:25px;
+
+
+	color:#333333;
+	font-size:1em;
+	background-color:#EFEFEF;
+	margin:20px 0px 10px 0px;
+	line-height:23px;
+	text-indent:10px;
+	padding:0px 0px 0px 0px;
+}
