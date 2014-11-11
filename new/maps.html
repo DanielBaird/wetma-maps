@@ -208,7 +208,7 @@ Tropics World Heritage Area and its management, including boundaries and
 	<tr>
 
 		<style>
-			/* ------------------------------------------------------------ */
+			/* --------------------------------------------------- */
 			select.spp-select { display: block; width: 90%; }
 			select.spp-select option { padding: 0.15em; }
 			select.spp-select option.hint { color: #999; }
@@ -263,7 +263,7 @@ Tropics World Heritage Area and its management, including boundaries and
 			#wtma-maps-layered .splitmap-layer.right {
 				text-align: right;
 			}
-			/* ------------------------------------------------------------ */
+			/* --------------------------------------------------- */
 		</style>
 
 		<td class="section2 content-type-wtma_maps">
@@ -271,14 +271,15 @@ Tropics World Heritage Area and its management, including boundaries and
 				<td style="width:350px">
 					<p><select class="spp-select" id="spp-type">
 						<option class="hint" value="" selected="selected">choose species type:</option>
-						<option value="spp-type-small">small</option>
-						<option value="spp-type-caps">CAPS</option>
+						<option value="st-small">small</option>
+						<option value="st-caps">CAPS</option>
+						<option value="st-qs">starts with Q</option>
 					</select></p><p><select class="spp-select" id="spp">
 						<option class="hint" value="" selected="selected">choose species:</option>
-						<option class="spp-type-small" value="asdf">asdf</option>
-						<option class="spp-type-caps" value="QWER">QWER</option>
-						<option class="spp-type-small" value="qwer">qwer</option>
-						<option class="spp-type-caps" value="ASDF">ASDF</option>
+						<option class="st-small" value="asdf">asdf</option>
+						<option class="st-caps st-qs" value="QWER">QWER</option>
+						<option class="st-small st-qs" value="qwer">qwer</option>
+						<option class="st-caps" value="ASDF">ASDF</option>
 					</select></p>
 					<p><input class="layer-checkbox" name="layer-5" id="checkbox-layer-5" checked="checked" type="checkbox"> Towns</p>
 					<p><input class="layer-checkbox" name="layer-2" id="checkbox-layer-2" type="checkbox"> Roads</p>
@@ -352,7 +353,7 @@ Tropics World Heritage Area and its management, including boundaries and
 				$("#layer-4-key, #layer-7-key, #layer-5-key").show();
 			});
 
-			// -----------------------------------------------------------
+			// ------------------------------------------------------
 			// split map and species map handling
 			function splitAt(pageX) {
 				// split the left/right maps at the given pageX value
@@ -418,7 +419,7 @@ Tropics World Heritage Area and its management, including boundaries and
 					splitAt(event.pageX);
 				});
 			});
-			// -----------------------------------------------------------
+			// ------------------------------------------------------
 
 
 			</script>
