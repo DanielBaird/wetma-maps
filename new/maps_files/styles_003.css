@@ -1,0 +1,9 @@
+#submit_for_approval { width:300px; text-align:left; margin:20px auto; border:1px solid #ffa247; padding:20px 20px 6px 20px;display:none; background-color:#fff8ec; -moz-border-radius: 10px;border-radius: 10px;}
+#submit_for_approval p { color:black; ]}
+#submit_for_approval textarea { width:286px; height:86px; padding:7px 7px;}
+#submit_for_approval input[type="submit"] {padding:7px 10px; text-transform: capitalize; cursor: pointer;}
+
+#delete-cancel-btn, #cancel-btn {padding:7px 10px; text-transform: capitalize; cursor: pointer; float:right}
+
+#submit_for_approval.showit {display:block};
+#history_window {display: none;font-size: 11px;color:#000;text-align: left;width:300px;margin:20px auto;height:100px; overflow-y: scroll;overflow-x: hidden; border:1px solid #ffa247; padding:20px 20px 6px 20px; background-color:#fff8ec;}

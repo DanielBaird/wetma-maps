@@ -1,0 +1,6 @@
+@charset "utf-8";
+/* CSS Document */
+#wtma-exploring-maps {width:293px;height:409px;position:relative; /*background:url('images/map-bg.jpg') no-repeat 0 0;*/}
+#wtma-exploring-maps img {display:none;position:absolute;top:0;left:0;}
+#wtma-exploring-maps img#map-bg {display:block;point}
+

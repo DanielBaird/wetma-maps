@@ -1,0 +1,66 @@
+@CHARSET "UTF-8";
+/* 
+ * Gezzas new messaging system, OMG it is amazing !!! 
+ * Its seperate so it can be both front and back end
+ * 
+ */
+
+
+.messages ul {
+  margin: 0;
+}
+.messages li {
+  margin-left: 10px;
+	list-style:disc;
+}
+
+.messages {
+  border: 3px solid #FF9900;
+  padding:10px;
+  margin: 10px 0px;
+	padding-left:60px;
+	background-color: #fff;
+  border: 1px solid #b8d3e5;
+	font-size:12px;
+	/* text-transform:capitalize; Removed by Damian 17-AUG-2010 */ 
+}
+
+.preview {
+  background-color: #fcfce8;
+  border: 1px solid #e5e58f;
+}
+
+
+/* message types 
+ * error, status, forbidden
+ * 
+ */
+
+
+.messages.status {
+  color: #4293FF;
+	background : #fff url('images/status.png') no-repeat 10px center;
+	border-color: #4293FF;
+}
+
+.messages.error{
+  color: #a30000;
+	background : #FFCCCC url('images/error.png') no-repeat 10px center;
+	border-color: #FF410F;
+}
+.messages.success{
+  color: #47BB24;
+	background : #EFFFDF url('images/success.png') no-repeat 10px center;
+	border-color:#47BB24;
+}
+
+.messages.denied{
+  color: #a30000;
+  background : #FFCCCC url('images/denied.png') no-repeat 10px center;
+	border-color:#FF410F;
+}
+.messages.warning{
+  color: #FFA200;
+  background : #FFEDCF url('images/warning.png') no-repeat 10px center;
+	border-color:#FFA200;
+}

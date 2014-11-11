@@ -1,0 +1,25 @@
+@CHARSET "UTF-8";
+/* This will contain CSS for page layouts only.*/
+table.layout{border-collapse:collapse; width:100%;}
+table.layout td{vertical-align:top;}
+
+#layout2 td.section2 {
+	width:360px;
+	padding-left:40px;
+}
+
+#layout3 td {vertical-align: top}
+#layout3 td.section1 {width:360px;padding-right:40px;}
+#layout3 td.section2, #layout3 td.section3, #layout3 td.section4 {padding-bottom:20px;}
+
+#layout4 td {vertical-align: top}
+#layout4 td.section1, #layout4 td.section2, #layout4 td.section3 {padding-bottom:20px;}
+#layout4 td.section4 {width:360px;padding-left:40px;}
+
+#layout7.section2 {
+	width:400px;
+}
+
+#layout9 td.section2 {
+	padding-left:20px;
+}

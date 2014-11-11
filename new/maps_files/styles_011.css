@@ -1,0 +1,11 @@
+#formSearch {margin-bottom: 20px}
+#formSearch input[type="text"] {font-size: 12px;padding:5px;width:250px}
+#formSearch input[type="submit"] {font-size: 12px;padding:5px 5px 4px 5px;background-color:#5fc6f2;line-height: 20px;border:0;color:#FFF;cursor:pointer}
+#formSearch input[type="submit"]:hover {background-color:#299ed0;}
+#search_results {padding:0;margin:20px 0 0 0;border-top:1px dotted #CCC;}
+#search_results li { list-style: none;padding: 5px 0px 5px 0px;border-bottom:1px dotted #CCC;}
+#pagination_links {margin:20px 0;}
+#pagination_links a {padding:5px 8px;background:#5fc6f2;background:#999;color:#FFF}
+#pagination_links a:hover {background:#299ed0;}
+#pagination_links strong {padding:5px 8px;background:#CCC;color:#FFF}
+#pagination_links p {padding-top:20px;color:#666;}
