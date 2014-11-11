@@ -354,7 +354,23 @@ Tropics World Heritage Area and its management, including boundaries and
 			});
 
 			// ------------------------------------------------------
+			//
 			// split map and species map handling
+			//
+
+			// make it work on touch screens
+			// from: https://github.com/createlogic/map-touch-events-to-mouse-handlers
+			function mapTouchEvents(event,simulatedType) {
+				if(event.changedTouches.length>1){return;}
+				var t = event.changedTouches[0];
+				eventToSimulate = document.createEvent('MouseEvent');
+				eventToSimulate.initMouseEvent(
+					simulatedType, true, true, window, 1,
+					t.screenX, t.screenY, t.clientX, t.clientY,
+					false, false, false, false, 0, null);
+				t.target.dispatchEvent(eventToSimulate);
+				event.preventDefault();
+			}
 			function splitAt(pageX) {
 				// split the left/right maps at the given pageX value
 				var leftWidth = 100;
@@ -368,6 +384,9 @@ Tropics World Heritage Area and its management, including boundaries and
 				$("#wtma-maps-split").attr("style", "left: " + leftWidth + "px");
 			}
 			$(document).ready(function(){
+				// hook up touch events to mouse events
+				document.addEventListener('touchmove',function(e){ mapTouchEvents(e,'mousemove'); },true);
+
 				// keep a copy of all the species options
 				window.spareOptions = $("<select></select>");
 				$("#spp option").clone().appendTo(window.spareOptions)
