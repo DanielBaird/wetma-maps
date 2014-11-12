@@ -212,7 +212,7 @@ Tropics World Heritage Area and its management, including boundaries and
 			select.spp-select { display: block; width: 90%; }
 			select.spp-select option { padding: 0.15em; }
 			select.spp-select option.hint { color: #999; }
-			#wtma-maps-layered .splitmap-layer {
+			#wtma-maps-layered .splitmap-layer, #wtma-maps-layered p.sppname {
 				position: absolute;
 				top: 0;
 				left: 0;
@@ -230,7 +230,7 @@ Tropics World Heritage Area and its management, including boundaries and
 				width: 0;
 				height: 0;
 				content: '';
-				top: 10px;
+				top: 25px;
 				border: 10px solid rgba(0,0,0, 0);
 			}
 			#wtma-maps-layered .splitmap-layer.line:before {
@@ -243,14 +243,13 @@ Tropics World Heritage Area and its management, including boundaries and
 				border-right: none;
 				border-left-color: #000;
 			}
-			#wtma-maps-layered .splitmap-layer.line.hidden { display: none; }
+			#wtma-maps-layered .hidden { display: none; }
 			#wtma-maps-layered .splitmap-layer > * {
 				position: absolute;
 				top: 0;
 				left: 0;
-				opacity: 0.66;
 			}
-			#wtma-maps-layered .splitmap-layer p {
+			#wtma-maps-layered p {
 				opacity: 1;
 				box-sizing: border-box;
 				width: 100%;
@@ -260,9 +259,8 @@ Tropics World Heritage Area and its management, including boundaries and
 				text-shadow: 0 0 2px #fff;
 				text-shadow: 0 0 2px #fff, 0 0 1px #fff;
 			}
-			#wtma-maps-layered .splitmap-layer.right {
-				text-align: right;
-			}
+			#wtma-maps-layered .splitmap-layer.right { text-align: right; }
+			#wtma-maps-layered .sppname { text-align: center; }
 			/* --------------------------------------------------- */
 		</style>
 
@@ -271,15 +269,219 @@ Tropics World Heritage Area and its management, including boundaries and
 				<td style="width:350px">
 					<p><select class="spp-select" id="spp-type">
 						<option class="hint" value="" selected="selected">choose species type:</option>
-						<option value="st-small">small</option>
-						<option value="st-caps">CAPS</option>
-						<option value="st-qs">starts with Q</option>
+
+<option value="BIRD">birds</option>
+<option value="FROG">frogs</option>
+<option value="MAMM">mammals</option>
+<option value="MONO">monotremes</option>
+<option value="REPT">reptiles</option>
+
 					</select></p><p><select class="spp-select" id="spp">
 						<option class="hint" value="" selected="selected">choose species:</option>
-						<option class="st-small" value="asdf">asdf</option>
-						<option class="st-caps st-qs" value="QWER">QWER</option>
-						<option class="st-small st-qs" value="qwer">qwer</option>
-						<option class="st-caps" value="ASDF">ASDF</option>
+
+<option class="REPT" value="MORKING">Amethystine Python (Morelia kinghorni)</option>
+<option class="FROG" value="LITLORI">Armoured Mistfrog (Litoria lorica)</option>
+<option class="MAMM" value="ANTGODM">Atherton Antechinus (Antechinus godmani)</option>
+<option class="BIRD" value="ASW">Atherton Scrubwren (Sericornis keri)</option>
+<option class="BIRD" value="ABT">Australian Brush Turkey (Alectura lathami)</option>
+<option class="FROG" value="RANDAEM">Australian Bullfrog (Rana daemeli)</option>
+<option class="BIRD" value="KP">Australian King Parrot (Alisterus scapularis)</option>
+<option class="FROG" value="NYCDAYI">Australian Lace-lid (Nyctimystes dayi)</option>
+<option class="BIRD" value="AZK">Azure Kingfisher (Alcedo azurea)</option>
+<option class="REPT" value="VERANNU">Bandy Bandy (Vermicella annulata)</option>
+<option class="BIRD" value="BCS">Barred Cuckoo-Shrike (Coracina lineata)</option>
+<option class="REPT" value="TECJIGU">Bartle Frere Skink (Techmarscincus jigurru)</option>
+<option class="BIRD" value="BASTH">Bassian Thrush (Zoothera lunulata)</option>
+<option class="FROG" value="COPCONC">Beautiful Nursery-Frog (Cophixalus concinnus)</option>
+<option class="MAMM" value="DENBENN">Bennett's Tree-kangaroo (Dendrolagus bennettianus)</option>
+<option class="BIRD" value="BBUT">Black Butcherbird (Cracticus quoyi)</option>
+<option class="MAMM" value="PTEALEC">Black flying-fox (Pteropus alecto)</option>
+<option class="REPT" value="HEMSIGN">Black-bellied Swamp Snake (Hemiaspis signata)</option>
+<option class="BIRD" value="BFMON">Black-faced Monarch (Monarcha melanopsis)</option>
+<option class="FROG" value="COPEXIG">Bloomfield Nursery-Frog (Cophixalus exiguus)</option>
+<option class="BIRD" value="BFPF">Blue-faced Parrot-Finch (Erythrura trichroa)</option>
+<option class="BIRD" value="BST">Bowers Shrike-Thrush (Colluricincla boweri)</option>
+<option class="REPT" value="HYPBOYD">Boyd's Forest Dragon (Hypsilurus boydii)</option>
+<option class="BIRD" value="BHE">Bridled Honeyeater (Lichenostomus frenatus)</option>
+<option class="BIRD" value="BPIG">Brown Cuckoo-Dove (Macropygia amboinensis)</option>
+<option class="BIRD" value="BGER">Brown Gerygone (Gerygone mouki)</option>
+<option class="REPT" value="BOIIRRE">Brown Tree Snake (Boiga irregularis)</option>
+<option class="REPT" value="FURTRIS">Brown-headed Snake (Furina tristis)</option>
+<option class="BIRD" value="BCUC">Brush Cuckoo (Cacomantis variolosus)</option>
+<option class="BIRD" value="BBPK">Buff-breasted Paradise-Kingfisher (Tanysiptera sylvia)</option>
+<option class="MAMM" value="RATFUSC">Bush Rat (Rattus fuscipes)</option>
+<option class="FROG" value="COPINFA">Buzzing Nursery-Frog (Cophixalus infacetus)</option>
+<option class="REPT" value="CACCHUR">Cacophis churchilli</option>
+<option class="MAMM" value="RATLEUC">Cape York Rat (Rattus leucopus)</option>
+<option class="REPT" value="CARRHOM">Carlia rhomboidalis</option>
+<option class="REPT" value="CARLAEV">Chameleon Gecko (Carphodactylus laevis)</option>
+<option class="BIRD" value="CBILCUC">Channel-billed Cuckoo (Scythrops novaehollandiae)</option>
+<option class="BIRD" value="CBCUC">Chestnut-breasted Cuckoo (Cacomantis castaneiventris)</option>
+<option class="BIRD" value="CC">Chowchilla (Orthonyx spaldingii)</option>
+<option class="REPT" value="COEFRON">Coeranoscincus frontalis</option>
+<option class="BIRD" value="KOEL">Common Koel (Eudynamys scolopacea)</option>
+<option class="FROG" value="LITRHEO">Common Mistfrog (Litoria rheocola)</option>
+<option class="FROG" value="COPORNA">Common Nursery-Frog (Cophixalus ornatus)</option>
+<option class="REPT" value="DENPUNC">Common Tree Snake (Dendrelaphis punctulata)</option>
+<option class="MAMM" value="TRIJOHN">Coppery Brushtail Possum (Trichosurus vulpecula j.)</option>
+<option class="FROG" value="AUSFRYI">Cricket Chirper (Austrochaperina fryi)</option>
+<option class="BIRD" value="CROS">Crimson Rosella (Platycercus elegans)</option>
+<option class="REPT" value="SAPCZEC">Czechura's Litter Skink (Saproscincus czechurai)</option>
+<option class="MAMM" value="PSECINE">Daintree River Ringtail Possum (Pseudochirulus cinereus)</option>
+<option class="MAMM" value="CANLUPU">Dingo (Canis lupus dingo)</option>
+<option class="BIRD" value="DEFP">Double-eyed Fig-Parrot (Cyclopsitta diophthalma)</option>
+<option class="BIRD" value="DUHE">Dusky Honeyeater (Myzomela obscura)</option>
+<option class="MAMM" value="RHIMEGA">Eastern horseshoe bat (Rhinolophus megaphyllus)</option>
+<option class="FROG" value="LITFALL">Eastern Sedgefrog (Litoria fallax)</option>
+<option class="REPT" value="RHINIGR">Eastern Smalleyed Snake (Cryptophis nigrescens)</option>
+<option class="BIRD" value="ESB">Eastern Spinebill (Acanthorhynchus tenuirostris)</option>
+<option class="MAMM" value="NYCROBI">Eastern tubenosed bat (Nyctimene robinsoni)</option>
+<option class="REPT" value="PHYLESU">Eastern Water Dragon (Physignathus lesueurii)</option>
+<option class="REPT" value="EULQUOY">Eastern Water Skink (Eulamprus quoyii)</option>
+<option class="BIRD" value="EWB">Eastern Whipbird (Psophodes olivaceus)</option>
+<option class="BIRD" value="ED">Emerald Dove (Chalcophaps indica)</option>
+<option class="REPT" value="EULBRAC">Eulamprus brachysoma</option>
+<option class="REPT" value="EULFRER">Eulamprus frerei</option>
+<option class="REPT" value="EULTIGR">Eulamprus tigrinus</option>
+<option class="BIRD" value="FGER">Fairy Gerygone (Gerygone palpebrosa)</option>
+<option class="BIRD" value="FTCUC">Fan-tailed Cuckoo (Cacomantis flabelliformis)</option>
+<option class="MAMM" value="MELCERV">Fawn-footed Melomys (Melomys cervinipes)</option>
+<option class="BIRD" value="FW">Fernwren (Oreoscopus gutturalis)</option>
+<option class="BIRD" value="FIG">Figbird (Sphecotheres viridis)</option>
+<option class="MAMM" value="MURFLOR">Flute-nosed bat (Murina florium)</option>
+<option class="REPT" value="SAPTETR">Four-toed Litter Skink (Saproscincus tetradactylus)</option>
+<option class="MAMM" value="UROCAUD">Giant White-tailed Rat (Uromys caudimaculatus)</option>
+<option class="REPT" value="GLAMJOB">Glaphyromorphus mjobergi</option>
+<option class="BIRD" value="GOLDBB">Golden Bowerbird (Prionodura newtoniana)</option>
+<option class="BIRD" value="GOLDW">Golden Whistler (Pachycephala pectoralis)</option>
+<option class="BIRD" value="GBCUC">Gould's Bronze-Cuckoo (Chrysococcyx russatus)</option>
+<option class="BIRD" value="GHE">Graceful Honeyeater (Meliphaga gracilis)</option>
+<option class="MAMM" value="PSEARCH">Green Ringtail Possum (Pseudochirops archeri)</option>
+<option class="FROG" value="LITGENI">Green-eyed Treefrog (Litoria genimaculata)</option>
+<option class="BIRD" value="GFAN">Grey Fantail (Rhipidura fuliginosa)</option>
+<option class="BIRD" value="GGH">Grey Goshawk (Accipiter novaehollandiae)</option>
+<option class="BIRD" value="GREYW">Grey Whistler (Pachycephala simplex)</option>
+<option class="BIRD" value="GHR">Grey-headed Robin (Heteromyias albispecularis)</option>
+<option class="REPT" value="GLAFUSC">Grey-tailed Skink (Glaphyromorphus fuscicaudis)</option>
+<option class="REPT" value="PHYGULB">Gulbaru Gecko (Phyllurus gulbaru)</option>
+<option class="BIRD" value="HFB">Helmeted Friarbird (Philemon buceroides)</option>
+<option class="MAMM" value="PSEHERB">Herbert River Ringtail Possum (Pseudochirulus herbertensis)</option>
+<option class="REPT" value="MORSPIL">Jungle Carpet Python (Morelia spilota)</option>
+<option class="REPT" value="TROMAIR">Keelback (Tropidonophis mairii)</option>
+<option class="REPT" value="VARVARI">Lace Monitor (Varanus varius)</option>
+<option class="REPT" value="LAMCOGG">Lampropholis coggeri</option>
+<option class="REPT" value="LAMMIRA">Lampropholis mirabilis</option>
+<option class="REPT" value="LAMROBE">Lampropholis robertsi</option>
+<option class="BIRD" value="LBGER">Large-billed Gerygone (Gerygone magnirostris)</option>
+<option class="BIRD" value="LBSW">Large-billed Scrubwren (Sericornis magnirostris)</option>
+<option class="MAMM" value="MYOADVE">Large-footed myotis (Myotis adversus)</option>
+<option class="MAMM" value="HEMLEMU">Lemuroid Ringtail Possum (Hemibelideus lemuroides)</option>
+<option class="BIRD" value="LSOWL">Lesser Sooty Owl (Tyto multipunctata)</option>
+<option class="BIRD" value="LEWHE">Lewin's Honeyeater (Meliphaga lewinii)</option>
+<option class="FROG" value="LITJUNG">Litoria jungguy</option>
+<option class="BIRD" value="LBCUC">Little Bronze-Cuckoo (Chrysococcyx minutillus)</option>
+<option class="BIRD" value="LK">Little Kingfisher (Alcedo pusilla)</option>
+<option class="BIRD" value="LST">Little Shrike-Thrush (Colluricincla megarhyncha)</option>
+<option class="MAMM" value="PERNASU">Long-nosed Bandicoot (Perameles nasuta)</option>
+<option class="MAMM" value="CERCAUD">Long-tailed Pygmy Possum (Cercartetus caudatus)</option>
+<option class="MAMM" value="DENLUMH">Lumholtz's Tree-kangaroo (Dendrolagus lumholtzi)</option>
+<option class="BIRD" value="MACHE">Macleay's Honeyeater (Xanthotis macleayana)</option>
+<option class="REPT" value="EGEFRER">Major Skink (Egernia frerei)</option>
+<option class="MAMM" value="UROHADR">Masked White-tailed Rat (Uromys hadrourus)</option>
+<option class="BIRD" value="MSTAR">Metallic Starling (Aplonis metallica)</option>
+<option class="BIRD" value="MTB">Mistletoebird (Dicaeum hirundinaceum)</option>
+<option class="FROG" value="MIXCARB">Mixophyes Carbinensis</option>
+<option class="FROG" value="MIXCOGG">Mixophyes Coggeri</option>
+<option class="FROG" value="LITNYAK">Mountain Mistfrog (Litoria nyakalensis)</option>
+<option class="BIRD" value="MTHORN">Mountain Thornbill (Acanthiza katherina)</option>
+<option class="FROG" value="COPMONT">Mountain Top Nursery-Frog (Cophixalus monticola)</option>
+<option class="REPT" value="GLACLAN">Mt Elliot skink (Glaphyromorphus clandestinus)</option>
+<option class="REPT" value="PHYAMNI">Mt.Elliot Leaf-tail gecko (Phyllurus amnicola)</option>
+<option class="MAMM" value="HYPMOSC">Musky Rat-kangaroo (Hypsiprymnodon moschatus)</option>
+<option class="REPT" value="NACCHEV">Nactus cheverti</option>
+<option class="BIRD" value="NPIT">Noisy Pitta (Pitta versicolor)</option>
+<option class="FROG" value="MIXSCHE">Northern Barred Frog (Mixophyes schevilli)</option>
+<option class="REPT" value="SALCORN">Northern Leaf-tailed Gecko (Saltuarius cornutus)</option>
+<option class="FROG" value="LITXANT">Northern Orange-eyed Treefrog (Litoria xanthomera)</option>
+<option class="REPT" value="CARRUBR">Northern Red-throated Skink (Carlia rubrigularis)</option>
+<option class="FROG" value="TAURHEO">Northern Tinkerfrog (Taudactylus rheophilus)</option>
+<option class="REPT" value="DENCALL">Northern Tree Snake (Dendrelaphis calligastra)</option>
+<option class="BIRD" value="OBO">Olive-backed Oriole (Oriolus sagittatus)</option>
+<option class="BIRD" value="OFSF">Orange-footed Scrubfowl (Megapodius reinwardt)</option>
+<option class="REPT" value="FURORNA">Orange-naped Snake (Furina ornata)</option>
+<option class="BIRD" value="OCUC">Oriental Cuckoo (Cuculus saturatus)</option>
+<option class="BIRD" value="PYR">Pale-yellow Robin (Tregellasia capito)</option>
+<option class="BIRD" value="PFROG">Papuan Frogmouth (Podargus papuensis)</option>
+<option class="FROG" value="AUSROBU">Pealing Chirper (Austrochaperina robusta)</option>
+<option class="BIRD" value="CURR">Pied Currawong (Strepera graculina)</option>
+<option class="BIRD" value="PIPIG">Pied Imperial Pigeon (Ducula bicolor)</option>
+<option class="BIRD" value="PMON">Pied Monarch (Arses kaupi)</option>
+<option class="REPT" value="CYCGERR">Pink-tongued Lizard (Cyclodomorphus gerrardii)</option>
+<option class="FROG" value="COPHOSM">Pipping Nursery-Frog (Cophixalus hosmeri)</option>
+<option class="MONO" value="ORNANAT">Platypus (Ornithorhynchus anatinus)</option>
+<option class="MAMM" value="POGMOLL">Prehensile-tailed Rat (Pogonomys mollipilosus)</option>
+<option class="REPT" value="GNYQUEE">Prickly Forest Skink (Gnypetoscincus queenslandiae)</option>
+<option class="BIRD" value="RBBE">Rainbow Bee-eater (Merops ornatus)</option>
+<option class="BIRD" value="RL">Rainbow Lorikeet (Trichoglossus haematodus)</option>
+<option class="REPT" value="RAMPOLY">Ramphotyphlops polygrammicus</option>
+<option class="REPT" value="PSEPORP">Red-bellied Black Snake (Pseudechis porphyriacus)</option>
+<option class="MAMM" value="THYSTIG">Red-legged Pademelon (Thylogale stigmatica)</option>
+<option class="BIRD" value="RNCR">Red-necked Crake (Rallina tricolor)</option>
+<option class="BIRD" value="RCFD">Rose-crowned Fruit-Dove (Ptilinopus regina)</option>
+<option class="REPT" value="TROCARI">Rough-scaled Snake (Tropidechis carinatus)</option>
+<option class="BIRD" value="RFAN">Rufous Fantail (Rhipidura rufifrons)</option>
+<option class="BIRD" value="ROWL">Rufous Owl (Ninox rufa)</option>
+<option class="MAMM" value="ANTADUS">Rusty Antechinus (Antechinus adustus)</option>
+<option class="REPT" value="SAPBASI">Saproscincus basiliscus</option>
+<option class="REPT" value="SAPLEWI">Saproscincus lewisi</option>
+<option class="BIRD" value="SATBB">Satin Bowerbird (Ptilonorhynchus violaceus)</option>
+<option class="BIRD" value="SBL">Scaly-breasted Lorikeet (Trichoglossus chlorolepidotus)</option>
+<option class="BIRD" value="SCARHE">Scarlet Honeyeater (Myzomela sanguinolenta)</option>
+<option class="FROG" value="TAUACUT">Sharp-snouted Dayfrog (Taudactylus acutirostris)</option>
+<option class="BIRD" value="SBCUC">Shining Bronze-Cuckoo (Golden) (Chrysococcyx lucidus)</option>
+<option class="BIRD" value="SE">Silvereye (Zosterops lateralis)</option>
+<option class="REPT" value="STECUCU">Slaty-grey Snake (Stegonotus cucullatus)</option>
+<option class="BIRD" value="BOO">Southern Boobook (Ninox novaeseelandiae)</option>
+<option class="BIRD" value="CASS">Southern Cassowary (Casuarius casuarius)</option>
+<option class="FROG" value="COPMCDO">Southern Nursery-Frog (Cophixalus mcdonaldi)</option>
+<option class="BIRD" value="SD">Spangled Drongo (Dicrurus bracteatus)</option>
+<option class="MAMM" value="PTECONS">Spectacled flying-fox (Pteropus conspicillatus)</option>
+<option class="BIRD" value="SMON">Spectacled Monarch (Monarcha trivirgatus)</option>
+<option class="BIRD" value="CAT">Spotted Catbird (Ailuroedus melanotis)</option>
+<option class="REPT" value="VARSCAL">Spotted Tree Monitor (Varanus scalaris)</option>
+<option class="MAMM" value="DASMACU">Spotted-tailed Quoll (Dasyurus maculatus)</option>
+<option class="FROG" value="LIMPERO">Striped Marshfrog (Limnodynastes peronii)</option>
+<option class="MAMM" value="DACTRIV">Striped Possum (Dactylopsila trivirgata)</option>
+<option class="BIRD" value="SCC">Sulphur-crested Cockatoo (Cacatua galerita)</option>
+<option class="BIRD" value="SFD">Superb Fruit-Dove (Ptilinopus superbus)</option>
+<option class="FROG" value="COPNEGL">Tangerine Nursery-Frog (Cophixalus neglectus)</option>
+<option class="FROG" value="COPAENI">Tapping Nursery-Frog (Cophixalus aenigma)</option>
+<option class="BIRD" value="TBBB">Tooth-billed Bowerbird (Scenopoeetes dentirostris)</option>
+<option class="BIRD" value="TPIG">Topknot Pigeon (Lopholaimus antarcticus)</option>
+<option class="BIRD" value="VT">Varied Triller (Lalage leucomela)</option>
+<option class="BIRD" value="VRIF">Victoria's Riflebird (Ptiloris victoriae)</option>
+<option class="FROG" value="LITNANN">Waterfall Frog (Litoria nannotis)</option>
+<option class="FROG" value="LITREVE">Whirring Treefrog (Litoria revelata)</option>
+<option class="BIRD" value="WBWS">White-breasted Woodswallow (Artamus leucorynchus)</option>
+<option class="FROG" value="AUSPLUV">White-browed Chirper (Austrochaperina pluvialis)</option>
+<option class="BIRD" value="WBR">White-browed Robin (Poecilodryas superciliosa)</option>
+<option class="BIRD" value="WBSW">White-browed Scrubwren (Sericornis frontalis)</option>
+<option class="BIRD" value="WEMON">White-eared Monarch (Monarcha leucotis)</option>
+<option class="MAMM" value="SMILEUC">White-footed Dunnart (Sminthopsis leucopus)</option>
+<option class="BIRD" value="WHPIG">White-headed Pigeon (Columba leucomela)</option>
+<option class="FROG" value="LITINFR">White-lipped Treefrog (Litoria infrafrenata)</option>
+<option class="BIRD" value="WRSW">White-rumped Swiftlet (Collocalia spodiopygius)</option>
+<option class="BIRD" value="WTNT">White-throated Needletail (Hirundapus caudacutus)</option>
+<option class="BIRD" value="WTTC">White-throated Treecreeper (Cormobates leucophaeus)</option>
+<option class="FROG" value="COPBOMB">Windsor Nursery-Frog (Cophixalus bombiens)</option>
+<option class="BIRD" value="WOMP">Wompoo Fruit-Dove (Ptilinopus magnificus)</option>
+<option class="BIRD" value="YO">Yellow Oriole (Oriolus flavocinctus)</option>
+<option class="BIRD" value="YBBB">Yellow-breasted Boatbill (Machaerirhynchus flaviventer)</option>
+<option class="REPT" value="DEMPSAM">Yellow-faced Whipsnake (Demansia psammophis)</option>
+<option class="MAMM" value="ANTFLAV">Yellow-footed Antechinus (Antechinus flavipes)</option>
+<option class="BIRD" value="YSHE">Yellow-spotted Honeyeater (Meliphaga notata)</option>
+<option class="BIRD" value="YTSW">Yellow-throated Scrubwren (Sericornis citreogularis)</option>
+
 					</select></p>
 					<p><input class="layer-checkbox" name="layer-5" id="checkbox-layer-5" checked="checked" type="checkbox"> Towns</p>
 					<p><input class="layer-checkbox" name="layer-2" id="checkbox-layer-2" type="checkbox"> Roads</p>
@@ -322,17 +524,17 @@ Tropics World Heritage Area and its management, including boundaries and
 
 						<div class="splitmap-layer left" id="wtma-maps-leftside">
 							<img class="spp" src="">
-							<p class="title"></p>
+							<p class="hidden"><br>current</p>
 						</div>
 
 						<div class="splitmap-layer right" id="wtma-maps-rightside">
 							<img class="spp" src="">
-							<p class="title"></p>
+							<p class="hidden"><br>future</p>
 						</div>
 
 						<div class="splitmap-layer line hidden" id="wtma-maps-split">
 						</div>
-
+						<p class="sppname"></p>
 						<img alt="" title="" id="layer-northpoint" src="maps_files/layer-scale-and-northpoint-v2.png">
 						<img alt="" title="" id="layer-logo" src="maps_files/layer-logo.png">
 					</div>
@@ -394,6 +596,9 @@ Tropics World Heritage Area and its management, including boundaries and
 				var typeSelector = $("#spp-type");
 				var sppSelector = $("#spp");
 
+				typeSelector.val("");
+				sppSelector.val("");
+
 				// set up the filtering of the species list
 				typeSelector.change(function(event) {
 					var options = window.spareOptions.find('option');
@@ -423,13 +628,12 @@ Tropics World Heritage Area and its management, including boundaries and
 					var selectedSpp = sppSelector.val();
 					var selSppName = sppSelector.children(':selected').text()
 					// update images
-					$("#wtma-maps-leftside  img.spp").attr('src', 'sppimages/' + selectedSpp + '-current.png').fadeIn();
-					$("#wtma-maps-rightside img.spp").attr('src', 'sppimages/' + selectedSpp + '-future.png').fadeIn();
-					// update titles
-					$("#wtma-maps-leftside  p.title").text(selSppName + ' - current');
-					$("#wtma-maps-rightside p.title").text(selSppName + ' - future');
+					$("#wtma-maps-leftside  img.spp").attr('src', 'sppimages/' + selectedSpp + '.current.png').fadeIn();
+					$("#wtma-maps-rightside img.spp").attr('src', 'sppimages/' + selectedSpp + '.future.png').fadeIn();
+					// update title
+					$("#wtma-maps-layered p.sppname").text(selSppName);
 					// show splitter
-					$("#wtma-maps-split").removeClass('hidden');
+					$("#wtma-maps-layered .hidden").removeClass('hidden');
 					splitAt();
 				});
 
