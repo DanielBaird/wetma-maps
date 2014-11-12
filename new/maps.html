@@ -587,7 +587,8 @@ Tropics World Heritage Area and its management, including boundaries and
 			}
 			$(document).ready(function(){
 				// hook up touch events to mouse events
-				$("#wtma-maps-layered").get().addEventListener('touchmove',function(e){ mapTouchEvents(e,'mousemove'); },true);
+				// console.log($("#wtma-maps-layered").get());
+				$("#wtma-maps-layered")[0].addEventListener('touchmove',function(e){ mapTouchEvents(e,'mousemove'); },true);
 
 				// keep a copy of all the species options
 				window.spareOptions = $("<select></select>");
