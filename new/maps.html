@@ -243,7 +243,8 @@ Tropics World Heritage Area and its management, including boundaries and
 				border-right: none;
 				border-left-color: #000;
 			}
-			#wtma-maps-layered .hidden { display: none; }
+			#wtma-maps-layered .spp-hidden,
+			#wtma-maps-keys .spp-hidden { display: none; }
 			#wtma-maps-layered .splitmap-layer > * {
 				position: absolute;
 				top: 0;
@@ -261,6 +262,39 @@ Tropics World Heritage Area and its management, including boundaries and
 			}
 			#wtma-maps-layered .splitmap-layer.right { text-align: right; }
 			#wtma-maps-layered .sppname { text-align: center; }
+			#wtma-maps-keys .suitabilitykey {
+				border-radius: 5px;
+				box-sizing: border-box;
+				position: relative;
+				padding: 0.5em 4em;
+				width: 90%;
+				background-image: linear-gradient(to right, #FFD700, #008B00);
+				text-align: center;
+				font-weight: bold;
+				line-height: 2em;
+				text-shadow: 0 0 1px #fff;
+				text-shadow: 1px 1px 0.25px rgba(255,255,255, 0.66), 1px -1px 0.25px rgba(255,255,255, 0.66), -1px -1px 0.25px rgba(255,255,255, 0.66), -1px 1px 0.25px rgba(255,255,255, 0.66);
+			}
+			#wtma-maps-keys .suitabilitykey:before,
+			#wtma-maps-keys .suitabilitykey:after {
+				font-weight: normal;
+				position: absolute;
+				top: 50%;
+				height: 1em;
+				line-height: 1em;
+				margin-top: -0.5em;
+				padding: 0 0.5em;
+			}
+			#wtma-maps-keys .suitabilitykey:before {
+				left: 0;
+				text-align: left;
+				content: 'least';
+			}
+			#wtma-maps-keys .suitabilitykey:after {
+				right: 0;
+				text-align: right;
+				content: 'most';
+			}
 			/* --------------------------------------------------- */
 		</style>
 
@@ -496,6 +530,7 @@ Tropics World Heritage Area and its management, including boundaries and
 					<!--		<p><input class="layer-checkbox" type="checkbox" name="layer-6" id="checkbox-layer-6" /> Reef</p>-->
 					<!--		<p><input class="layer-checkbox" type="checkbox" name="layer-8" id="checkbox-layer-8" /> Local Government Areas</p>-->
 					<div id="wtma-maps-keys">
+						<p class="suitabilitykey spp-hidden">Species Suitability</p>
 						<p><img alt="" title="" style="display: inline;" id="layer-5-key" src="maps_files/key-towns.gif"></p>
 						<p><img alt="" title="" id="layer-2-key" src="maps_files/key-roads.gif"></p>
 						<p><img alt="" title="" id="layer-3-key" src="maps_files/key-boundary.gif"></p>
@@ -524,15 +559,15 @@ Tropics World Heritage Area and its management, including boundaries and
 
 						<div class="splitmap-layer left" id="wtma-maps-leftside">
 							<img class="spp" src="">
-							<p class="hidden"><br>current</p>
+							<p class="spp-hidden"><br>current</p>
 						</div>
 
 						<div class="splitmap-layer right" id="wtma-maps-rightside">
 							<img class="spp" src="">
-							<p class="hidden"><br>future</p>
+							<p class="spp-hidden"><br>future</p>
 						</div>
 
-						<div class="splitmap-layer line hidden" id="wtma-maps-split">
+						<div class="splitmap-layer line spp-hidden" id="wtma-maps-split">
 						</div>
 						<p class="sppname"></p>
 						<img alt="" title="" id="layer-northpoint" src="maps_files/layer-scale-and-northpoint-v2.png">
@@ -562,16 +597,15 @@ Tropics World Heritage Area and its management, including boundaries and
 
 			// make it work on touch screens
 			// from: https://github.com/createlogic/map-touch-events-to-mouse-handlers
-			function mapTouchEvents(event,simulatedType) {
-				if(event.changedTouches.length>1){return;}
-				var t = event.changedTouches[0];
-				eventToSimulate = document.createEvent('MouseEvent');
-				eventToSimulate.initMouseEvent(
-					simulatedType, true, true, window, 1,
-					t.screenX, t.screenY, t.clientX, t.clientY,
-					false, false, false, false, 0, null);
-				t.target.dispatchEvent(eventToSimulate);
-				event.preventDefault();
+			function mapTouchEvents(ev,simType) {
+				if(ev.changedTouches.length>1){return;}
+				var t = ev.changedTouches[0];
+				evToSim = document.createEvent('MouseEvent');
+				evToSim.initMouseEvent(simType,true,true,window,1,
+					t.screenX,t.screenY,t.clientX,t.clientY,
+					false,false,false,false,0,null);
+				t.target.dispatchEvent(evToSim);
+				ev.preventDefault();
 			}
 			function splitAt(pageX) {
 				// split the left/right maps at the given pageX value
@@ -634,7 +668,7 @@ Tropics World Heritage Area and its management, including boundaries and
 					// update title
 					$("#wtma-maps-layered p.sppname").text(selSppName);
 					// show splitter
-					$("#wtma-maps-layered .hidden").removeClass('hidden');
+					$("#wtma-maps-layered .spp-hidden, #wtma-maps-keys .spp-hidden").removeClass('spp-hidden');
 					splitAt();
 				});
 
